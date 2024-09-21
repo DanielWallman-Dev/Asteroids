@@ -14,9 +14,17 @@ def main():
         for event in pygame.event.get():
             if event.type == pygame.QUIT:
                 return
-            
+        
+        # Update the player's state
+        player.update(dt)
+        
+        # Clear the screen
         screen.fill("black")
+
+        # Draw the player
         player.draw(screen)
+
+        # Swap the buffers to display the new frame
         pygame.display.flip()
 
         # limit the framrate to 60 fps
